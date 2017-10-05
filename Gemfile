@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -56,7 +58,7 @@ group :test do
   gem 'timecop'
 end
 
-gem 'acts_as_paranoid'
+gem 'acts_as_paranoid', git: 'https://github.com/shanebonham/acts_as_paranoid'
 gem 'geocoder'
 gem 'storext'
 gem 'stripe'
