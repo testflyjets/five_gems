@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
-
+  acts_as_paranoid
+  
   def today?
     self.start_time.today?
   end
