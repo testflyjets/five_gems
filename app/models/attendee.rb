@@ -1,10 +1,10 @@
 class Attendee < ApplicationRecord
   include Storext.model
 
-  # store_attributes :preferences do
-  #   # vegan Boolean, default: false
-  #   seats Integer, default: 0
-  # end
+  store_attributes :preferences do
+    vegan Boolean, default: false
+    seats Integer, default: 0
+  end
 
   geocoded_by :full_address
   after_validation :geocode,
