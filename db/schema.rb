@@ -10,16 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171005231318) do
+ActiveRecord::Schema.define(version: 20171005235842) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attendees", force: :cascade do |t|
+    t.string   "name"
+    t.string   "full_address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.jsonb    "preferences",  default: {}, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.datetime "deleted_at"
-    t.index ["deleted_at"], name: "index_events_on_deleted_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "full_address"
+    t.index ["deleted_at"], name: "index_events_on_deleted_at", using: :btree
   end
 
 end
