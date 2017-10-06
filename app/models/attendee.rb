@@ -2,7 +2,7 @@ class Attendee < ApplicationRecord
   include Storext.model
 
   # store_attributes :preferences do
-  #   food_choice String
+  #   # vegan Boolean, default: false
   #   seats Integer, default: 0
   # end
 
